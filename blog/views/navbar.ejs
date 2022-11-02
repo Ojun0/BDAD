@@ -1,27 +1,51 @@
-<nav id="navbar-example2" class="navbar bg-light px-3 mb-3">
-    <a class="navbar-brand" href="/">홈</a>
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link" href="/post">글작성</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/post/del">글삭제</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/post/update">글수정</a>
-      </li>
-      
-    </ul>
-  </nav>
-  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
-    <h4 id="scrollspyHeading1">First heading</h4>
-    <p>...</p>
-    <h4 id="scrollspyHeading2">Second heading</h4>
-    <p>...</p>
-    <h4 id="scrollspyHeading3">Third heading</h4>
-    <p>...</p>
-    <h4 id="scrollspyHeading4">Fourth heading</h4>
-    <p>...</p>
-    <h4 id="scrollspyHeading5">Fifth heading</h4>
-    <p>...</p>
+<style>
+  a{
+    text-decoration: none; /* a tag 밑줄 생기는거 지워줌*/
+  }
+  .navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 36px;
+  }
+  .login > a {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 120px; /*테두리 둥글게*/
+    transition: all 0.3s; 
+  }
+  .login > a:hover {
+    background-color: #333;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row; /* 영역 정렬*/
+    justify-content: flex-start; /* 영역 정렬*/
+    align-items: center; /* 영역 정렬*/
+    margin-bottom: 24px;
+  }
+  .menu > .menu_btn {
+    padding: 8px 24px;
+    font-size: 18px;
+    color: #ccc;
+  }
+  .menu > .sel {
+    color:  black;
+    border-bottom: 2px solid black ; /* border에서 밑 부분만 건드림 */
+  }
+</style>
+<div class="navbar">
+  <div class="logo">블로그</div>
+  <div class="login">
+    <a href="">로그인</a>
   </div>
+</div>
+<div class="menu">
+  <div class="menu_btn sel">트렌딩</div>
+  <div class="menu_btn">최신</div>
+</div>
