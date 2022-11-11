@@ -11,13 +11,20 @@
     }
     .card > .image{
         flex: 4; /* 영역을 준 만큼*/
-        width: auto;
-        height: auto;
+        top: 0px;
+        left: 0px;
+        width: 320px;
+        height: 222px;
 
     }
     .card > .content{
         flex: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:flex-start
     }
+    
     .card > .user{ /* >로 card에 하위 태그 중 하나 골라옴*/
         flex : 1;
         display: flex;
@@ -25,15 +32,38 @@
         justify-content: space-between;
         align-items: center;
     }
+
+    #sub-info{
+        color: #ccc;
+        font-size: 12px;
+    }
+    
+    h4{
+        font-size: 16px;
+    }
+
+    p{
+        color: #495057;
+    }
+
     .card:hover{ /* 마우스로 누를 때 뛰어오름*/
         transform: translateY(-16px);
         box-shadow: 0px 8px 16px #ccc;
     }
 </style>
 <div class="card">
-    <img class="image" src="https://www.w3schools.com/whatis/img_js.png">
+    <img class="image" src="https://velog.velcdn.com/images/city7310/post/528450a0-c064-4562-804f-18289dbfbba0/image.png">
     </img>
-    <div class="content"> 여기는 content </div>
+    <div class="content">
+        <h4 > 여기는 content 제목 </h4>
+        <p> content </p>
+        <div id="sub-info"> 
+            <span> 일전</span>
+            <span>·</span>
+            <span> 개의 댓글</span>
+        </div>
+    </div>
+
     <div class="user">
         <span>by</span>
         <span>❤️</span>
