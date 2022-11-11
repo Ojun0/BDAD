@@ -11,13 +11,19 @@
     }
     .card > .image{
         flex: 4; /* 영역을 준 만큼*/
-        
+        width: auto;
+        height: auto;
+
     }
     .card > .content{
         flex: 5;
     }
     .card > .user{ /* >로 card에 하위 태그 중 하나 골라옴*/
         flex : 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
     .card:hover{ /* 마우스로 누를 때 뛰어오름*/
         transform: translateY(-16px);
@@ -25,7 +31,11 @@
     }
 </style>
 <div class="card">
-    <div class="image"></div>
-    <div class="content"></div>
-    <div class="user"></div>
+    <img class="image" src="https://www.w3schools.com/whatis/img_js.png">
+    </img>
+    <div class="content"> 여기는 content </div>
+    <div class="user">
+        <span>by</span>
+        <span>❤️</span>
+    </div>
 </div>
