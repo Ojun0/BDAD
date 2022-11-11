@@ -2,70 +2,126 @@
     .card{
         display: flex;
         flex-direction: column;
-        width: 320px;
-        height: 400px;
+        flex: 1;
+        min-width: 300px;
+        height: 380px;
+        margin: 8px;
         background-color: white;
         border-radius: 8px;
-        box-shadow: 0px 4px 8px #eee;
+        box-shadow: rgb(0, 0, 0 / 4%) 0px 4px 16px 0px;
         transition: all 0.5s;
+        overflow: hidden;
     }
+
     .card > .image{
-        flex: 4; /* 영역을 준 만큼*/
-        top: 0px;
-        left: 0px;
-        width: 320px;
-        height: 222px;
+        height: 168px;
+        background: #666;
 
     }
+
+    .card > .image > .image{
+        height: 100%;
+        width: 100%;
+        object-fit: cover; 
+    }
+
     .card > .content{
         flex: 5;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items:flex-start
+        padding: 16px;
+        
     }
-    
+    .card > .content > .title{
+        font-size:16px;
+        font-weight: bold;
+        color: #212529;
+        margin-bottom: 4px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .card > .content > .content {
+        flex: 1;
+        margin-bottom: 20px;
+        color: #495057;
+        line-height: 1.5;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .card > .content > .info {
+        font-size: 12px;
+        line-height: 1.5;
+        color: #868296;
+    }
+
     .card > .user{ /* >로 card에 하위 태그 중 하나 골라옴*/
         flex : 1;
+        padding: 10px 16px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-    }
-
-    #sub-info{
-        color: #ccc;
+        height: 45px;
+        border-top: 1px solid #eee;
         font-size: 12px;
-    }
-    
-    h4{
-        font-size: 16px;
+        color: #868296;
     }
 
-    p{
-        color: #495057;
+    .card > .user > .writer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
+    .card > .user > .writer > .image {
+        width: 24px;
+        height:  24px;
+        border-radius: 12px;
+        background-color: #666;
+        margin-right: 8px;
+    }
+
+    .card > .user > .writer > .name > .strong {
+        color: #212529;
+    }
+
+    .card > .user > .writer > .like {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 12px;
+        color: #212529;
+    }
     .card:hover{ /* 마우스로 누를 때 뛰어오름*/
-        transform: translateY(-16px);
-        box-shadow: 0px 8px 16px #ccc;
+        transform: translateY(-8px);
+        box-shadow: rgb(0, 0, 0 / 8%) 0px 12px 20px 0px;
     }
+
 </style>
+
 <div class="card">
     <img class="image" src="https://velog.velcdn.com/images/city7310/post/528450a0-c064-4562-804f-18289dbfbba0/image.png">
     </img>
     <div class="content">
-        <h4 > 여기는 content 제목 </h4>
-        <p> content </p>
-        <div id="sub-info"> 
-            <span> 일전</span>
-            <span>·</span>
-            <span> 개의 댓글</span>
-        </div>
+        <div class="title"><%- posts [i].ptitle %></div>
+        <div class="content"><%- posts [i].pvalue %></div>
+        <div class="info"><%- posts [i].pdate %></div>
     </div>
 
     <div class="user">
-        <span>by</span>
-        <span>❤️</span>
+        <div class="writer">
+            <span class="image"></span>
+            <span class="name">by <strong><%- posts[i].pwriter%></strong></span>
+        </div>
+        <div class="like">
+            <svg width="12" height="12" viewBox="0 0 24 24">
+                <path
+                    fill="currentColor"
+                    d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"
+                ></path>
+            </svg>
+            <span class="count"><%- posts[i].plike %></span>
+        </div>
     </div>
 </div>
